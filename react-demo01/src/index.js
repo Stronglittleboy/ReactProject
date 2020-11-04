@@ -5,7 +5,7 @@ import './index.css';
 function Comment(props) {
     return (
         <div className="Comment">
-           <UserInfo user={props.author}/>
+            <UserInfo user={props.author}/>
             <div className="Comment-text">
                 {props.text}
             </div>
@@ -15,8 +15,9 @@ function Comment(props) {
         </div>
     );
 }
+
 /*抽取用户信息*/
-function UserInfo(props){
+function UserInfo(props) {
     return (
         <div className="UserInfo">
             <Avatar user={props.user}/>
