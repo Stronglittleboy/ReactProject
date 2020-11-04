@@ -1,21 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>;
-}
-function App(){
+
+function Comment(props) {
     return (
-        <div>
-            <Welcome name="李白"/>
-            <Welcome name="杜甫"/>
-            <Welcome name="王一帆"/>
+        <div className="Comment">
+            <div className="UserInfo">
+                <img className="Avatar"
+                     src={props.author.avatarUrl}
+                     alt={props.author.name}
+                />
+                <div className="UserInfo-name">
+                    {props.author.name}
+                </div>
+            </div>
+            <div className="Comment-text">
+                {props.text}
+            </div>
+            <div className="Comment-date">
+                {formatDate(props.date)}
+            </div>
         </div>
     );
 }
 
-const element = <Welcome name="Sara" />;
+function formatDate(date){
+    return date.toLocaleDateString();
+}
+
+const  compent = {
+    data:new Date(),
+    text:'I hope you enjoy learning React',
+    author:{
+        name:'李白',
+        avatarUrl:'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png'
+    }
+}
+
 ReactDOM.render(
-    <App/>,
+    <Comment date = {compent.data}
+             text = {compent.text}
+             author={compent.author}
+
+    />,
     document.getElementById('root')
 );
