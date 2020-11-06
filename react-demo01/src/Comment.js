@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import moment from 'moment'
 
-function Comment(props) {
+function Connect(props) {
     return (
         <div className="Comment">
             <UserInfo user={props.author}/>
@@ -38,10 +38,10 @@ function Avatar(props) {
 }
 
 function formatDate(date) {
-    return date.toLocaleDateString();
+    return moment(date).format('yyyy-MM-dd');
 }
 
-const comment = {
+const temp = {
     data: new Date(),
     text: 'I hope you enjoy learning React',
     author: {
@@ -49,12 +49,11 @@ const comment = {
         avatarUrl: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png'
     }
 }
-ReactDOM.render(
-    <Comment date={comment.data}
-             text={comment.text}
-             author={comment.author}
 
-    />,document.getElementById("root")
+function Comment(){
+    return <Connect date={temp.data}
+                    text={temp.text}
+                    author={temp.author}/>
+};
 
-);
 export default Comment;

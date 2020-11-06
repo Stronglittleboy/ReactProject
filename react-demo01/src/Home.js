@@ -6,20 +6,16 @@ class Home extends React.Component {
         return (
             <div>
                 <div>示例首页</div>
-                <div>
-                    <Link to="/comment/" style={{color: 'black'}}>
-                        <div>点击跳转到提取组件</div>
-                    </Link>
-                    <Link to="/clock/" style={{color: 'black'}}>
-                        <div>点击跳转到时钟组件</div>
-                    </Link>
-                    <Link to="/Page3/" style={{color: 'black'}}>
-                        <div>点击跳转到Page3</div>
-                    </Link>
-                </div>
+                <ul>
+                    <li><Link to='/comment'>comment</Link></li>
+                    <li><Link to='/clock'>生命周期</Link></li>
+                    <li><Link to='/actionLink'>自定连接</Link></li>
+                    <li><Link to='/coditionRendering'>条件渲染</Link></li>
+                    <li><Link to='/togglenOn'>条件渲染-开关</Link></li>
+                    <li><Link to='/productRow'>React哲学</Link> </li>
+                </ul>
             </div>
         );
     }
 }
-
 export default Home;
