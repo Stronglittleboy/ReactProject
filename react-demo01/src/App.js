@@ -8,7 +8,7 @@ import Clock from './Clock'
 import Comment from "./Comment";
 import ActionLink from "./ActionLink";
 import Toggle from "./Toggle";
-import ProductRow from "./ProductRow"
+import FilterableProductTable from "./FilterableProductTable"
 
 class App extends React.Component {
     render(){
@@ -20,7 +20,7 @@ class App extends React.Component {
                     <Route path="/clock" component={Clock} />
                     <Route path="/actionLink" component={ActionLink} />
                     <Route path="/togglenOn" component={Toggle} />
-                    <Route path="/productRow" component={ProductRow} />
+                    <Route path="/productRow" component={FilterableProductTable} />
                 </div>
             </Router>
         )
