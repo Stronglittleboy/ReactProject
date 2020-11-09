@@ -69,15 +69,14 @@ class SearchBar extends React.Component {
 
 function GetProduct(props) {
     return props.productList.map(item => {
-        return (
+        return [
             <tr>
                 <ProductCategoryRow category={item.type} key={item.type}/>
             </tr>,
-                item.data.map(product => {
-                        return <ProductRow product={product} key={product.name}/>
-                    }
-                )
-        );
+            item.data.map(product => {
+                return <ProductRow product={product} key={product.name}/>
+            })
+        ];
     });
 }
 
@@ -106,6 +105,7 @@ class ProductTable extends React.Component {
  *
  */
 function ProductCategoryRow(props) {
+    console.log("=====================" + props.category)
     return <td colSpan='2'><strong>{props.category}</strong></td>;
 }
 
@@ -114,7 +114,6 @@ class ProductRow extends React.Component {
     render() {
         /*解构赋值*/
         const {name, price, stocked} = this.props.product
-        console.log("================" + name, price)
         return (
             <tr>
                 <td style={stocked ? null : {color: 'red'}}>{name}</td>
