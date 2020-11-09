@@ -9,6 +9,7 @@ import Comment from "./Comment";
 import ActionLink from "./ActionLink";
 import Toggle from "./Toggle";
 import FilterableProductTable from "./FilterableProductTable"
+import UseStateHook from "./UseStateHook";
 
 class App extends React.Component {
     render(){
@@ -21,6 +22,8 @@ class App extends React.Component {
                     <Route path="/actionLink" component={ActionLink} />
                     <Route path="/togglenOn" component={Toggle} />
                     <Route path="/productRow" component={FilterableProductTable} />
+                    <Route path="/hook_01" component={UseStateHook} />
+
                 </div>
             </Router>
         )

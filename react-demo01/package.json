@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0",
     "moment": "^2.29.1",
     "react-router-dom": "^5.2.0"
   }
